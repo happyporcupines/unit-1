@@ -1,0 +1,12 @@
+/*Created by Brooke Fandrich*/
+h1 {
+        font-size: 50pt;
+}
+
+.myClass {
+        text-decoration: underline !important;
+}
+
+#thirdLine {
+        text-align: center;
+}
