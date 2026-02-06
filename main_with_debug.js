@@ -65,38 +65,36 @@ function addColumns(cityPop){
 }
 
 function addEvents(){
+    // Grab the table once and reuse it
+    let table = document.querySelector("table");
 
-	document.querySelector("table").addEventListener("mouseover", function(){
-		
-		var color = "rgb(";
+    table.addEventListener("mouseover", function(){
+        var color = "rgb(";
 
-		for (var i=0; i<3; i++){
+        for (var i=0; i<3; i++){
+            var random = Math.round(Math.random() * 255);
+            color += random;
 
-			var random = Math.round(Math.random() * 255);
+            if (i < 2){
+                color += ",";
+            } else {
+                color += ")";
+            }
+        }
 
-			color += random;
+        table.style.backgroundColor = color;
+    });
 
-			if (i<2){
-				color += ",";
-			
-			} else {
-				color += ")";}
-		}
+    function clickme(){
+        alert('Hey, you clicked me!');
+    }
 
-		document.querySelector("table").style.backgroundColor = color;
-	})
+    table.addEventListener("click", clickme);
+} 
 
-	function clickme(){
-
-		alert('Hey, you clicked me!');
-	}
-
-	document.querySelector("table").addEventListener("click", clickme)
-} // fixed parenthesis and brackets within funciton
-// fixing load issue
+// load entire table on initial load (no missing table)
 window.onload = function() {
     createTable(cityPop);
     addColumns(cityPop);
     addEvents();
-};dEvents();
-});
+};
