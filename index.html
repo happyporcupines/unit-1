@@ -3,27 +3,29 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
-            <title>My First Webpage</title>
-
-        <!--put your external stylesheet links here-->
-        <link rel="stylesheet" href="/css/style.css">
-        <!--[if IE<9]>
-            <link rel="stylesheet" href="css/style.ie.css">
-        <![endif]-->         
-        <!--you can also place internal styles here;             
-            place these within <style> tags-->        
+        <title>My First Webpage</title>
+        <link rel="stylesheet" href="./css/style.css">
     </head>
 
     <body>
-        <!--put your initial page content here-->
-	<h1>My Webpage </h1>
-	<p>Hello world!</p>
-	<p style="color:blueviolet; background-color:firebrick;" >Hello style!</p>
-	<p class="myClass">Hello Class!</p>
-	<p id="thirdLine" class="myClass">HelloIDs</p>
-	<a href="https://www.wisc.edu" target="_blank">Wisconsin</a>
+        <h1>My Webpage </h1>
+        <p>Hello world!</p>
+        <p style="color:blueviolet; background-color:firebrick;" >Hello style!</p>
+        <p class="myClass">Hello Class!</p>
+        <p id="thirdLine" class="myClass">HelloIDs</p>
+        <a href="https://www.wisc.edu" target="_blank">Wisconsin</a>
+ // set up table structure to connect to JS file
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th>City</th>
+                    <th>Population</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                </tbody>
+        </table>
 
-        <!--put your external script links here-->
-        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="main_with_debug.js"></script>
     </body>
 </html>
