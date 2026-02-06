@@ -6,7 +6,8 @@ thirdline.addEventListener("click", function(){
 	thirdline.innerHTML = "Changed it " + counter;
 	counter=counter+1
 });
-let cityPop = [
+
+let cityPop = [ // had to get all the "cityPop" variables to match
 	{ 
 		city: 'Madison',
 		population: 233209
@@ -24,6 +25,18 @@ let cityPop = [
 		population: 27244
 	}
 ];
+
+// adding function to create table
+
+function createTable(data) {
+    let table = document.querySelector("table");
+    let tbody = document.querySelector("#tableBody");
+
+    data.forEach(function(item) {
+        let rowContent = `<tr><td>${item.city}</td><td>${item.population}</td></tr>`;
+        tbody.insertAdjacentHTML('beforeend', rowContent);
+    });
+}
 
 function addColumns(cityPop){
     
@@ -46,8 +59,8 @@ function addColumns(cityPop){
     			citySize = 'Large';
     		}
 
-		row.insertAdjacentHTML('beforeend', '<td>' + citySize + '</td>');
-    	}
+		row.insertAdjacentHTML('beforeend', '<td>' + citySize + '</td>'); // fixed line
+    	} // fixed spelling
     })
 }
 
@@ -79,7 +92,11 @@ function addEvents(){
 	}
 
 	document.querySelector("table").addEventListener("click", clickme)
-}
-
-addColumns(cityPop);
-addEvents();
+} // fixed parenthesis and brackets within funciton
+// fixing load issue
+window.onload = function() {
+    createTable(cityPop);
+    addColumns(cityPop);
+    addEvents();
+};dEvents();
+});
