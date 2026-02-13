@@ -1,7 +1,10 @@
 //changed parameter name to geoData to be more descriptive
 function debugCallback(geoData){
 	//Using 'geoData' instead of the other variable
-	document.querySelector("#mydiv").insertAdjacentHTML('beforeend', '<br>GeoJSON data:<br>' + JSON.stringify(geoData));
+	//returns the geoData but with spaces
+	var formattedData = JSON.stringify(geoData, null, 2);
+	//preserve the formatting so it doesn't all end up one line
+	document.querySelector("#mydiv").insertAdjacentHTML('beforeend', '<pre>' + formattedData + '</pre>');
 };
 
 function debugAjax(){
@@ -18,5 +21,7 @@ function debugAjax(){
 		});
 };
 
-//start the function
-debugAjax();
+//start the function but make sure things load before executing
+document.addEventListener('DOMContentLoaded', function(){
+	debugAjax();
+});
