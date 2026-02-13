@@ -1,29 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-            <title>My First Webpage</title>
+<body>
+<h1>My Webpage </h1>
+<p>Hello world!</p>
+<p style="color:blueviolet; background-color:firebrick;">Hello style!</p>
+<p class="myClass">Hello Class!</p>
+<p id="thirdLine" class="myClass">HelloIDs</p>
+<a href="https://www.wisc.edu" target="_blank">Wisconsin</a>
 
-        <!--put your external stylesheet links here-->
-        <link rel="stylesheet" href="/css/style.css">
-        <!--[if IE<9]>
-            <link rel="stylesheet" href="css/style.ie.css">
-        <![endif]-->         
-        <!--you can also place internal styles here;             
-            place these within <style> tags-->        
-    </head>
+<table id="myTable">
+    <thead>
+    <tr>
+        <th>City</th>
+        <th>Population</th>
+    </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+</table>
 
-    <body>
-        <!--put your initial page content here-->
-	<h1>My Webpage </h1>
-	<p>Hello world!</p>
-	<p style="color:blueviolet; background-color:firebrick;" >Hello style!</p>
-	<p class="myClass">Hello Class!</p>
-	<p id="thirdLine" class="myClass">HelloIDs</p>
-	<a href="https://www.wisc.edu" target="_blank">Wisconsin</a>
-
-        <!--put your external script links here-->
-        <script type="text/javascript" src="js/main_with_debug.js"></script>
-    </body>
-</html>
+<div id="mydiv"></div>
+<!-- made sure to add both the scripts-->
+<script type="text/javascript" src="main_with_debug.js"></script>
+<script type="text/javascript" src="debug_ajax.js"></script>
+</body>
