@@ -1,19 +1,10 @@
-//changed parameter name to geoData to be more descriptive
+
+// Function to handle the data once it arrives
+//Using geoData instead of the other variable
 function debugCallback(geoData){
-	//Using 'geoData' instead of the other variable
-	//returns the geoData but with spaces
-	var myDiv = document.querySelector("#mydiv"); // creating variable to do a check
-
-	if (!myDiv) {
-		console.error("ERROR");
-		alert("Error");
-		return;
-	} // adding if statment to warn me if something is missing/wrong
-
-	var formattedData = JSON.stringify(geoData, null, 2);
 	//preserve the formatting so it doesn't all end up one line
-	myDiv.insertAdjacentHTML('beforeend', '<pre>' + formattedData + '</pre>');
-};
+	document.querySelector("#mydiv").insertAdjacentHTML('beforeend', 'GeoJSON data: ' + JSON.stringify(geoData));
+}
 
 function debugAjax(){
 	//Start the fetch request
@@ -22,14 +13,17 @@ function debugAjax(){
 			//Correctly returning the response as JSON
 			return response.json();
 		})
-		.then(function(data){
+		.then(function(geoData){
 			//Passing the actual data into the callback function
 			//This ensures the data is caught before it's used
-			debugCallback(data);
+			debugCallback(geoData);
 		});
-};
 
-//start the function but make sure things load before executing
-document.addEventListener('DOMContentLoaded', function(){
-	debugAjax();
-});
+	//The code that was here ran too early (before the data arrived)
+}
+
+//The global code that was here ran too early
+document.querySelector("#mydiv").insertAdjacentHTML('beforeend', 'GeoJSON data is loading');
+
+// Run the function!
+debugAjax();
